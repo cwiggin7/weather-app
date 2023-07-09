@@ -104,3 +104,24 @@ input#search-bar {
   top: 1.8rem;
   left: 17.3rem;
 }
+
+.weather-details {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  position: absolute;
+  border-left: 0.2rem solid rgba(255, 255, 255, 0.5);
+  top: 45%;
+  left: 22.5rem;
+  height: 10rem;
+  padding-left: 3.5rem;
+  justify-content: space-between;
+}
+
+#feels-like::after {
+  content: "\00B0 F";
+  font-size: 1rem;
+  position: absolute;
+}

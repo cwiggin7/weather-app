@@ -4,6 +4,9 @@ const searchBar = document.getElementById("search-bar");
 const conditionElement = document.getElementById("condition");
 const cityRegionElement = document.getElementById("city-region");
 const temperatureElement = document.getElementById("temperature");
+const feelsLikeElement = document.getElementById("feels-like");
+const windMPHElement = document.getElementById("wind-mph");
+const humidityElement = document.getElementById("humidity");
 
 function weatherFactory(
   city,
@@ -52,6 +55,9 @@ function fetchWeather(city) {
       conditionElement.innerText = weatherData.condition;
       cityRegionElement.innerText = `${weatherData.city.toUpperCase()}, ${weatherData.region.toUpperCase()}`;
       temperatureElement.innerText = weatherData.temperatureFahrenheit;
+      feelsLikeElement.innerText = `FEELS LIKE: ${weatherData.feelsLikeFahrenheit}`;
+      windMPHElement.innerText = `WIND: ${weatherData.windSpeedMph} MPH`;
+      humidityElement.innerText = `HUMIDITY: ${weatherData.humidity}%`;
     });
 }
 
@@ -60,8 +66,8 @@ function submitForm(event) {
   fetchWeather(searchBar.value);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   fetchWeather("Kansas City");
-  document.querySelector('form').addEventListener('submit', submitForm);
-  document.querySelector('a').addEventListener('click', submitForm);
+  document.querySelector("form").addEventListener("submit", submitForm);
+  document.querySelector("a").addEventListener("click", submitForm);
 });
