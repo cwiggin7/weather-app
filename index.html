@@ -2,41 +2,61 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <script src="./js/script.js" type="module"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js" defer></script>
   </head>
   <body>
-    <form class="search-container">
-      <input
-        type="text"
-        id="search-bar"
-        placeholder="Enter a city or location (e.g., Dallas)"
-      />
-      <a href="#">
-        <img
-          class="search-icon"
-          src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"
+    <div id="contents">
+      <form class="search-container" onsubmit="handleWeatherSearch(event)">
+        <input
+          type="text"
+          id="search-bar"
+          placeholder="Enter a location (e.g., city or ZIP code)"
         />
-      </a>
-    </form>
+        <a href="#"
+          ><img
+            class="search-icon"
+            src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"
+            onclick="handleWeatherSearch(event)"
+        /></a>
+      </form>
+      <div id="data-container">
+        <div id="weather-info">
+          <div id="weather-condition"></div>
+          <div id="location" class="data-label"></div>
+          <div id="temperature-fahrenheit" class="data-value"></div>
+        </div>
 
-    <div id="weatherContainer">
-      <p id="condition"></p>
-      <h1 id="city-region"></h1>
-      <span id="temperature"></span>
-      <div class="weather-details">
-        <p id="feels-like"></p>
-        <p id="wind-mph"></p>
-        <p id="humidity"></p>
+        <div id="extra-weather-info">
+          <div class="data-item">
+            <span class="data-label">Feels like:</span>
+            <span id="feels-like-fahrenheit" class="data-value"></span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">HUMIDITY:</span>
+            <span id="humidity" class="data-value"></span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">WIND MPH:</span>
+            <span id="wind-mph" class="data-value"></span>
+          </div>
+        </div>
       </div>
     </div>
   </body>
